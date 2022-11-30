@@ -122,7 +122,6 @@ function reset() {
     minutes = 0;
     winCount = 0;
     let cardValues = generateRandom();
-    console.log(cardValues);
     matrixGenerator(cardValues);
 }
 
