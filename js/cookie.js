@@ -9,10 +9,9 @@ function setCookie(cookieName, cookieValue, expiryDate) {
 
 function deleteCookie(cookieName) {
     var date = new Date()
-    date.setTime(date.getTime())
-    console.log(date);
+    date.setTime(date.getTime() - 60 * 60 * 24 * 1000)
 
-    document.cookie = cookieName + "=" + ";expires=" + new Date().toUTCString()
+    setCookie(cookieName , "a" , "Thu, 01 Jan 1970 00:00:01 GM")
 }
 
 function allCookieList() {

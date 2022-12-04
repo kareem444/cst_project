@@ -1,5 +1,10 @@
 var userNameCookie = "name"
-var passwordCookie = "passwrod"
+var passwordCookie = "password"
 
-var mainPageUrl = "../momery_game.html"
+var mainPageUrl = "../shrouk/html/index.html"
 var loginPage = "../login.html"
+var memoryGamePage = "../momery_game.html"
+var hangmanGamePage = "../hasan/main.html"
+var tickTackGamePage = "../ashraf/tic_tac_toe_game/index.html"
+var reactionGamePage = "../ashraf/Reaction_Game/index.html"
+var typingGamePage = "../shrouk/html/typing.html"
