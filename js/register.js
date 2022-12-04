@@ -1,10 +1,9 @@
-window.onload = function (e) {
-    var allCookies = allCookieList();
-    if (allCookies[userNameCookie] != null && allCookies[passwordCookie] != null) {
-        window.location.replace(loginPage)
-        return;
-    }
+var allCookies = allCookieList();
+if (allCookies[userNameCookie] != null && allCookies[passwordCookie] != null) {
+    window.location.replace(loginPage)
+}
 
+window.onload = function (e) {
     var userNameIput = document.getElementById("username")
     var passwordIput = document.getElementById("password")
     var confirmPasswordIput = document.getElementById("confirm_password")
