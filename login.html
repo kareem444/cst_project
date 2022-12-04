@@ -7,12 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/auth.css">
     <title>Login</title>
+
 </head>
 
 <body>
     <div class="container">
-        <form class="form" id="createAccount">
-            <h1 class="formTitle">Create Account</h1>
+        <form class="form" id="login">
+            <h1 class="formTitle">Login</h1>
             <div id="Incorrect" class="Incorrect"></div>
             <div calss="formInputs">
                 <input id="username" type="text" class="formInput" autofocus placeholder="Username">
@@ -20,15 +21,12 @@
             <div class="formInputs">
                 <input id="password" type="password" class="formInput" placeholder="Password">
             </div>
-            <div class="formInputs">
-                <input id="confirm_password" type="password" class="formInput" placeholder="Confirm Password">
-            </div>
             <button class="formBtn">Continue</button>
         </form>
     </div>
-    <script src="./js/cookie.js"></script>
     <script src="./js/constants.js"></script>
-    <script src="./js/register.js"></script>
+    <script src="./js/cookie.js"></script>
+    <script src="./js/login.js"></script>
 </body>
 
 </html>
