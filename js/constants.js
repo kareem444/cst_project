@@ -1,5 +1,6 @@
 var userNameCookie = "name"
 var passwordCookie = "password"
+var isLoginCookie = "isLogin"
 
 var mainPageUrl = "../shrouk/html/index.html"
 var loginPage = "../login.html"

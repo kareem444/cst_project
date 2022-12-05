@@ -21,6 +21,11 @@ function clickBtn(e) {
         return;
     }
 
+    var date = new Date()
+    date.setTime(date.getTime() + 60 * 60 * 24 * 1000)
+
+    setCookie(isLoginCookie, "1", date)
+
     window.location.replace(mainPageUrl)
 }
 

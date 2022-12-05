@@ -4,14 +4,11 @@ function getCookie(cookieName) {
 }
 
 function setCookie(cookieName, cookieValue, expiryDate) {
-    document.cookie = cookieName + "=" + cookieValue + ";expires=" + expiryDate
+    document.cookie = cookieName + "=" + cookieValue + "; path=/; expires=" + expiryDate
 }
 
 function deleteCookie(cookieName) {
-    var date = new Date()
-    date.setTime(date.getTime() - 60 * 60 * 24 * 1000)
-
-    setCookie(cookieName , "a" , "Thu, 01 Jan 1970 00:00:01 GM")
+    setCookie(cookieName , "" , new Date(0).toUTCString())
 }
 
 function allCookieList() {

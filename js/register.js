@@ -1,27 +1,38 @@
-var allCookies = allCookieList();
+var allCookies = allCookieList()
 if (allCookies[userNameCookie] != null && allCookies[passwordCookie] != null) {
-    window.location.replace(loginPage)
+    if (allCookies[isLoginCookie] == "1") {
+        window.location.replace("../shrouk/html/index.html")
+    } else {
+        window.location.replace(loginPage)
+    }
 }
 
 window.onload = function (e) {
-    var userNameIput = document.getElementById("username")
-    var passwordIput = document.getElementById("password")
-    var confirmPasswordIput = document.getElementById("confirm_password")
+    var userNameIput = document.getElementById('username')
+    var passwordIput = document.getElementById('password')
+    var confirmPasswordIput = document.getElementById('confirm_password')
 
-    var Incorrect = document.getElementsByClassName("Incorrect")[0]
+    var Incorrect = document.getElementsByClassName('Incorrect')[0]
 
-    var btn = document.getElementsByTagName("button")[0]
+    var btn = document.getElementsByTagName('button')[0]
 
     btn.addEventListener('click', clickBtn)
 
     function clickBtn(e) {
         e.preventDefault()
-        if (emptyField()) {
-            Incorrect.innerHTML = "Please Check All Inputs !"
-            return;
-        }
 
-        if (passwordIput.value !== confirmPasswordIput.value) {
+        var regx = /^[A-z]+$/
+
+        if (emptyField()) {
+            Incorrect.innerHTML = 'Please Check All Inputs !'
+            return;
+        } else if (!regx.test(userNameIput.value) || userNameIput.value.length < 2) {
+            Incorrect.innerHTML = 'Not Valid UserName !'
+            return;
+        } else if (passwordIput.value.length < 6) {
+            Incorrect.innerHTML = 'Wrong ! Password Should be at least 6 Char!'
+            return;
+        } else if (passwordIput.value !== confirmPasswordIput.value) {
             Incorrect.innerHTML = "Password and Confirm Password Dosn't Match !"
             return;
         }
@@ -31,11 +42,16 @@ window.onload = function (e) {
 
         setCookie(userNameCookie, userNameIput.value, date)
         setCookie(passwordCookie, passwordIput.value, date)
+        setCookie(isLoginCookie, "1", date)
 
         window.location.replace(mainPageUrl)
     }
 
     function emptyField() {
-        return userNameIput.value == "" || passwordIput.value == "" || confirmPasswordIput.value == ""
+        return (
+            userNameIput.value == '' ||
+            passwordIput.value == '' ||
+            confirmPasswordIput.value == ''
+        )
     }
 }
