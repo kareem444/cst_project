@@ -1,22 +1,22 @@
 var allCookies = allCookieList()
 if (allCookies[userNameCookie] != null && allCookies[passwordCookie] != null) {
     if (allCookies[isLoginCookie] == "1") {
-        window.location.replace("../shrouk/html/index.html")
+        window.location.replace("./pages/home.html")
     } else {
         window.location.replace(loginPage)
     }
 }
 
 window.onload = function (e) {
-    var userNameIput = document.getElementById('username')
-    var passwordIput = document.getElementById('password')
-    var confirmPasswordIput = document.getElementById('confirm_password')
+    var userNameIput = document.getElementById('username');
+    var passwordIput = document.getElementById('password');
+    var confirmPasswordIput = document.getElementById('confirm_password');
 
-    var Incorrect = document.getElementsByClassName('Incorrect')[0]
+    var Incorrect = document.getElementsByClassName('Incorrect')[0];
 
-    var btn = document.getElementsByTagName('button')[0]
+    var btn = document.querySelector('.formBtn');
 
-    btn.addEventListener('click', clickBtn)
+    btn.addEventListener('click', clickBtn);
 
     function clickBtn(e) {
         e.preventDefault()

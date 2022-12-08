@@ -56,7 +56,6 @@ let randomValueNumber = Math.floor(Math.random() * randomPropValue.length);
 
 // The Chosen Word
 let randomValueValue = randomPropValue[randomValueNumber];
-console.log(randomValueValue);
 
 
 
@@ -110,18 +109,13 @@ document.addEventListener("click", (e) => {
 
     // Get Clicked Letter
     let theClickedLetter = e.target.innerHTML.toLowerCase();
-    console.log("The clicked letter : " +theClickedLetter);
 
     // The Chosen Word
     let theChosenWord = Array.from(randomValueValue.toLowerCase());
-    console.log("the chosen word : " + theChosenWord);
-
     theChosenWord.forEach((wordLetter, WordIndex) => {
 
       // If The Clicked Letter Equal To One Of The Chosen Word Letter
       if (theClickedLetter == wordLetter) {
-
-        console.log("word letter : " + wordLetter)
         
         // Set Status To Correct
         theStatus = true;
@@ -132,8 +126,6 @@ document.addEventListener("click", (e) => {
           if (WordIndex === spanIndex) {
 
             span.innerHTML = theClickedLetter;
-            console.log("span index : " + spanIndex);
-
 
           }
 
@@ -168,11 +160,6 @@ document.addEventListener("click", (e) => {
 
     }
     test.push(theClickedLetter);
-    console.log("Type of chosen  " + typeof(theChosenWord));
-    console.log( "  chosen    " + theChosenWord);
-    
-    console.log("Type of test" + typeof(test));
-    console.log(" test   "  + test);
 
     if(theStatus == true){
       
@@ -183,8 +170,6 @@ document.addEventListener("click", (e) => {
         success++;
       }
     }
-    console.log(success);
-
     if(success == theChosenWord.length){
       Success();
       setTimeout("location.reload(true);", 2000);

@@ -32,3 +32,9 @@ function clickBtn(e) {
 function emptyField() {
     return userNameIput.value == "" || passwordIput.value == ""
 }
+
+function hvAcc() {
+    deleteCookie("name");
+    deleteCookie("password");
+    window.location.replace("../index.html");
+}

@@ -12,19 +12,19 @@ let firstCard = false;
 let secondCard = false;
 
 const images = [
-    { name: "a", image: "images/a.png" },
-    { name: "b", image: "images/b.png" },
-    { name: "e", image: "images/e.png" },
-    { name: "i", image: "images/i.png" },
-    { name: "m", image: "images/m.png" },
-    { name: "s", image: "images/s.png" },
-    { name: "v", image: "images/v.png" },
-    { name: "z", image: "images/z.png" },
+    { name: "a", image: "../images/a.png" },
+    { name: "b", image: "../images/b.png" },
+    { name: "e", image: "../images/e.png" },
+    { name: "i", image: "../images/i.png" },
+    { name: "m", image: "../images/m.png" },
+    { name: "s", image: "../images/s.png" },
+    { name: "v", image: "../images/v.png" },
+    { name: "z", image: "../images/z.png" },
 ];
 
 let seconds = 0, minutes = 0, movesCount = 0, winCount = 0;
 
-const matrixGenerator = (cardValues) => {
+function matrixGenerator(cardValues) {
     for (let i = 0; i < 16; i++) {
         gameContainer.innerHTML += '<div class="card-container" data-card="' + cardValues[i].name + '"> <div class="card-before">?</div><div class="card-after hide"><img src="' + cardValues[i].image + '" width="70px" class="image"/></div></div >';
     }
@@ -33,8 +33,8 @@ const matrixGenerator = (cardValues) => {
 
     // images handler
     cards = document.querySelectorAll(".card-container");
-    cards.forEach((card) => {
-        card.addEventListener("click", () => {
+    cards.forEach(function (card) {
+        card.addEventListener("click", function () {
             if (!card.classList.contains("matched")) {
                 card.firstElementChild.classList.add("hide");
                 card.lastElementChild.classList.remove("hide");
@@ -58,7 +58,7 @@ const matrixGenerator = (cardValues) => {
                         let [tempFirst, tempSecond] = [firstCard, secondCard];
                         firstCard = false;
                         secondCard = false;
-                        setTimeout(() => {
+                        setTimeout(function () {
                             tempFirst.firstElementChild.classList.remove("hide");
                             tempFirst.lastElementChild.classList.add("hide");
 
@@ -73,7 +73,7 @@ const matrixGenerator = (cardValues) => {
 };
 
 //Start game
-startButton.addEventListener("click", () => {
+startButton.addEventListener("click", function () {
     controls.classList.add("hide");
     stopButton.classList.remove("hide");
     startButton.classList.add("hide");
@@ -145,7 +145,8 @@ function generateRandom() {
         cardValues.push(randImages[randomIndex]);
         randImages.splice(randomIndex, 1);
     }
-    cardValues.sort(() => Math.random() - 0.5);
+    cardValues.sort(function () { return Math.random() - 0.5 });
+    console.log(cardValues);
     return cardValues;
 }
 
